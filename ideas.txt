@@ -21,3 +21,5 @@ For the next meeting:
 - Decide on idea 
 - Find data set to use 
 - Find methods on how to solve the problem 
+
+test line
