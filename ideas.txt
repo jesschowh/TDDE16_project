@@ -3,8 +3,8 @@ Ideas for TDDE16 project
     - Customer reviews of a service
     - Movie reviews
 - Classification
-    - Create playlist based on the mood of the song based on lyrics 
-    - Predict the author of a tweet/text -- real world application --> find which person wrote what part in a research paper
+    (a) Create playlist based on the mood of the song based on lyrics 
+    (b) Predict the author of a tweet/text -- real world application --> find which person wrote what part in a research paper
 
 What is x and how can it be used? 
 - LTSM, long term short memory, process sequences -- classification, supported by pytorch keras 
@@ -22,4 +22,8 @@ For the next meeting:
 - Find data set to use 
 - Find methods on how to solve the problem 
 
-test line
+https://medium.com/analytics-vidhya/lyric-mood-identifier-c8e94a49c73 
+https://www.kaggle.com/datasets/edenbd/150k-lyrics-labeled-with-spotify-valence 
+https://github.com/EdenBD/lyrics-sentiment 
+
+Spotify valence: musical positiveness of the track 
