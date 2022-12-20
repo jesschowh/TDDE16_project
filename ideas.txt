@@ -22,8 +22,61 @@ For the next meeting:
 - Find data set to use 
 - Find methods on how to solve the problem 
 
-https://medium.com/analytics-vidhya/lyric-mood-identifier-c8e94a49c73 
-https://www.kaggle.com/datasets/edenbd/150k-lyrics-labeled-with-spotify-valence 
-https://github.com/EdenBD/lyrics-sentiment 
 
-Spotify valence: musical positiveness of the track 
+
+--- Supervisor meeting 30/11-2022 --- 
+* Ask about if the diagnostic test can be done on distance 
+
+Idea: Analysis of song lyrics to create a playlist based on the mood using emotion detection/recognition?
+
+Emotion detection/recognition: identify the emotion (e.g. happy, sad, angry) in a text 
+Sentiment analysis: positive, neutral or negative opinion in a text
+Is the approach same in both cases? Which would be the most suited for this idea?
+
+Dataset
+(1) https://www.kaggle.com/datasets/edenbd/150k-lyrics-labeled-with-spotify-valence 
+- use valence or VADER to assign a label
+(2) http://softeng.polito.it/erion/ 
+- MoodyLyrics4Q (emotions based on Russell's Model- happy, sad, angry, relaxed)
+    - pre-annotated dataset but less data, 2000 
+
+---> alternative idea: compare gold standard labelled data with silver standard labelled data (?) song lyrics
+
+--> does lyrics emotion correlate to valence, use MoodyLyrics4Q to validate
+mood conveyed by lyrics correlated with whats conveyed by music/tune 
+background about, annotation, what does it mean
+sentiment analysis on lyrics in big dataset
+
+sentiment analysis on different models? -->validate? 
+
+
+Methods:
+KNN, SVM, BERT? compare between
+
+Both (1) and (3) uses the song valence as a positive or negative label, (2) uses VADER to create a label
+(1) https://github.com/EdenBD/lyrics-sentiment 
+- BERT 
+- Sentiment analysis 
+
+(2) https://towardsdatascience.com/how-to-analyze-emotions-and-words-of-the-lyrics-from-your-favorite-music-artist-bbca10411283
+- specifically section 3. Sentiment Analysis of Songs Lyrics
+    - VADER 
+
+(3) https://medium.com/analytics-vidhya/lyric-mood-identifier-c8e94a49c73 
+
+(4) https://github.com/sgiammy/emotion-patterns-in-music-playlists 
+
+Spotify valence: musical positiveness of the track - high = more positive/happy, low = more negative/sad
+
+Evaluation:
+- F1 score? 
+- Build a playlist and determine the mood? "user test"
+
+Similar projects done previously in the course: 
+- Emotion Detection (2021)
+- Mood classification of songs through lyrics analysis - a text mining approach (2020)
+- Evaluating song emotions impact on song popularity (2020)
+- Emotional classification of Donald J. Trump’s tweets (2020)
+
+
+--- Supervisor meeting 20/12-2022 --- 
