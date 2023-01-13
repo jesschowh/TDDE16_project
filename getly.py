@@ -1,20 +1,33 @@
 import lyricsgenius as lg
+import pandas as pd
+import csv
+import constants
 
-# file = open("./lyrics.csv", "w")
-file = open("./test.txt", "w")
+data = pd.read_csv('MoodyLyricsPN.csv')
 
-genius = lg.Genius('s4lDBOpUf--GgM1ydzt7yQUWLLUofE96OHBEhFvhhuCJ5ni0rd3yqoC9FuhrZDIn', skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"], remove_section_headers=True)
+file = open("./train-data_extended.csv", "w")
+
+genius = lg.Genius(constants.ACCESS_TOKEN, skip_non_songs=True, excluded_terms=["(Remix)", "(Live)"], remove_section_headers=True)
 
 def get_lyrics():
-    c = 0
-    # for name in arr:
-    try:
-        # songs = (genius.search_artist(name, sort='popularity')).songs
-        song = genius.search_song("To You", "Andy Shauf") # song title, artist name
-        file.write("".join(song.lyrics))
-        c += 1
-        # print(f"Songs grabbed:{len(s)}")
-    except:
-        print(f"some exception")
+    writer = csv.writer(file)
+    header = ['index', 'artist', 'title', 'mood', 'lyrics']
+    writer.writerow(header)
+    for i, row in data.iterrows():
+
+        try:
+            # song = genius.search_song("To You", "Andy Shauf") # song title, artist name
+            # song = genius.search_song("West Coast", "Lana Del Rey")
+            song = genius.search_song(row[2], row[1])
+            ly = song.lyrics.replace('Embed', '')
+            # print(ly.splitlines(keepends=True))
+            d = [row[0], row[1], row[2], row[3], "".join(ly.splitlines(keepends=True)[1:])]
+            # file.write("".join(ly.splitlines(keepends=True)[1:]))
+            writer.writerow(d)
+            # file.write("".join(ly.splitlines(keepends=True)[2:]))
+
+        except:
+            print(f"some exception")
+        # file.write('\n----new song')
 
 get_lyrics()
